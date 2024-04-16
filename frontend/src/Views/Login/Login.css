@@ -1,0 +1,42 @@
+.login2 {
+  margin: 0;
+  overflow: hidden; /* Evita el desbordamiento del contenido animado */
+  background: linear-gradient(
+    150deg,
+    rgb(0, 0, 0),
+    rgb(26, 77, 68),
+    rgb(17, 51, 66)
+  );
+  background-size: 400% 300%;
+  animation: BgGradient 5s ease infinite;
+  min-height: calc(100vh - 50px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@keyframes BgGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.login {
+  margin: 0;
+  overflow: hidden; /* Evita el desbordamiento del contenido animado */
+  background: linear-gradient(
+    150deg,
+    rgb(0, 0, 0),
+    rgb(26, 77, 68),
+    rgb(17, 51, 66)
+  );
+  background-size: 400% 300%;
+  animation: BgGradient 5s ease infinite;
+  min-height: calc(100vh - 50px);
+}

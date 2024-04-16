@@ -1,0 +1,41 @@
+body {
+  margin: 0; /* Elimina el margen predeterminado del body */
+}
+
+.navbar {
+  height: 50px; /* Ajusta la altura de tu navbar según sea necesario */
+  background-color: #333; /* Ajusta el color de fondo según sea necesario */
+}
+
+.customers {
+  overflow: hidden;
+  background: linear-gradient(
+    150deg,
+    rgb(0, 0, 0),
+    rgb(26, 77, 68),
+    rgb(17, 51, 66)
+  );
+  background-size: 400% 300%;
+  animation: BgGradient 5s ease infinite;
+  min-height: calc(
+    100vh - 50px
+  ); /* Resta la altura de la navbar del 100% de la altura de la pantalla */
+}
+
+@keyframes BgGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.carta {
+  padding-left: 40px !important;
+  padding-right: 40px !important;
+  padding-top: 40px !important;
+}

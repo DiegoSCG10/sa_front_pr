@@ -1,0 +1,86 @@
+version: '3'
+
+services:
+  ms0_login:
+    container_name: ms0_login
+    restart: always
+    build: ./backend/ms0_Login
+    ports:
+      - "4000:4000"
+    networks:
+      - default1
+
+  ms1_ticketsc:
+    container_name: ms1_ticketsc
+    restart: always
+    build: ./backend/ms1_TicketsC
+    ports:
+      - "6020:6020"
+    networks:
+      - default1
+
+  ms2_agentsg:
+    container_name: ms2_agentsg
+    restart: always
+    build: ./backend/ms2_AgentsG
+    ports:
+      - "6040:6040"
+    networks:
+      - default1
+
+  ms3_agentsu:
+    container_name: ms3_agentsu
+    restart: always
+    build: ./backend/ms3_AgentsU
+    ports:
+      - "6060:6060"
+    networks:
+      - default1
+
+  ms4_admin:
+    container_name: ms4_admin
+    restart: always
+    build: ./backend/ms4_Admin
+    ports:
+      - "6080:6080"
+    networks:
+      - default1
+
+  ms5_informes:
+    container_name: ms5_informes
+    restart: always
+    build: ./backend/ms5_Informes
+    ports:
+      - "8080:8080"
+    networks:
+      - default1
+
+  middleware:
+    depends_on:
+      - ms0_login
+      - ms1_ticketsc
+      - ms2_agentsg
+      - ms3_agentsu
+      - ms4_admin
+      - ms5_informes
+    container_name: middleware
+    build: ./backend/middleware
+    restart: always
+    ports:
+      - "8000:8000"
+    networks:
+      - default1
+
+  frontend:
+    depends_on:
+      - middleware
+    container_name: frontend
+    build: ./frontend
+    restart: always
+    ports:
+      - "5173:5173"
+    networks:
+      - default1
+
+networks:
+  default1:
