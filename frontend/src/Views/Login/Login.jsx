@@ -91,7 +91,7 @@ function Login() {
           <Grid textAlign="center" style={{ marginTop: "10%" }} verticalAlign="middle">
             <Grid.Column style={{ maxWidth: 450 }}>
               <Header as="h2" inverted textAlign="center">
-                ¡INICIA SESIÓN EN DC-TICKETS!
+                CALIFICACIÓN F2 - AUX
               </Header>
               <Form size="large">
                 <Segment stacked>
